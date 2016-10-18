@@ -11,6 +11,7 @@ App\Helpers\RolePermissions.php
   + `$slug` (A slug for the permission)
   
 Usage example (flipping roles, enabled = disable, disabled = enabled): 
+
 ```
 // Get the role "admin" via the slug
 $role = Role::getRoleFromSLug("admin");
@@ -51,15 +52,15 @@ foreach($rp as $p) {
 
 # Changed files in vendors
 Bican\Roles\Models\Role.php:
-- Added static function `getRoleFromSLug($slug)` to get a role using a SLug.
-- Added function `usersInRole()` to get all the users who are inside the role
-- Added function `users()` to get a list of users [DOES NOT RETURN THE MODEL, use `usersInRole()` instead!]
-- Added function `getPermissions()` to get all the permissions that are given to the role
-- Added function `permissions()` to get a list of permissions [DOES NOT RETURN THE MODEL, use `getPermissions()` instead!]
-- Added function `getPermissionsSLugs()` to get a string array of the permissions in the role
+- Added [static function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L43) `getRoleFromSLug($slug)` to get a role using a SLug.
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L53) `usersInRole()` to get all the users who are inside the role
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L73) `users()` to get a list of users [DOES NOT RETURN THE MODEL, use `usersInRole()` instead!]
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L60) `getPermissions()` to get all the permissions that are given to the role
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L77) `permissions()` to get a list of permissions [DOES NOT RETURN THE MODEL, use `getPermissions()` instead!]
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Models/Role.php#L64) `getPermissionsSLugs()` to get a string array of the permissions in the role
 
 Bican\Roles\Traits\HasRoleAndPermission.php:
-- Added function `attachPermissionFromSLug($slug)` to attach a permission to a role using a slug (Returns false/true on success)
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Traits/HasRoleAndPermission.php#L310) `attachPermissionFromSLug($slug)` to attach a permission to a role using a slug (Returns false/true on success)
 
 Bican\Roles\Traits\RoleHasRelations.php:
-- Added function `attachPermissionFromSLug($slug)` to attach a permission to a role using a slug (Returns false/true on success)
+- Added [function](https://github.com/CallumCarmicheal/RomanBican.Roles-Helper/blob/master/roles/src/Bican/Roles/Traits/RoleHasRelations.php#L40) `attachPermissionFromSLug($slug)` to attach a permission to a role using a slug (Returns false/true on success)
